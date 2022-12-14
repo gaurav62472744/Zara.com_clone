@@ -1,7 +1,7 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import "./Dbody.css";
+import "./Dbody.css";
 let Men = [
   "NEW",
   "ZARA ATHLETICZ",

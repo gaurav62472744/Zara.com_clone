@@ -43,7 +43,12 @@ function Footer() {
         </Flex>
       </Box>
       <Box p="np2%" mt={20} ml="15%">
-        <Text fontSize="xs" lineHeight={1.2} fontWeight={300}>
+        <Text
+          fontSize="xs"
+          lineHeight={1.2}
+          fontWeight={300}
+          marginRight={"300px"}
+        >
           Name and address of the manufacturer:
         </Text>
         <Text fontSize="xs" lineHeight={1.2} fontWeight={300}>
