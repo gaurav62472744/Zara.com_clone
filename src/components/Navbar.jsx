@@ -14,8 +14,19 @@ import {
   useColorMode,
   Center,
   Image,
+  useDisclosure,
+  RadioGroup,
+  Radio,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerHeader,
+  DrawerBody,
+  IconButton,
+  HamburgerIcon,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import React from "react";
 
 const NavLink = ({ children }) => (
   <Link
@@ -35,15 +46,31 @@ const NavLink = ({ children }) => (
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   //   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [placement, setPlacement] = React.useState("right");
   return (
     <>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
+      <Box bg={useColorModeValue("white", "white")} px={4} height={"100px"}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              aria-label="Options"
+              variant="outline"
+              color="blue"
+            />
+            <MenuList>
+              <MenuItem command="⌘T">New Tab</MenuItem>
+              <MenuItem command="⌘N">New Window</MenuItem>
+              <MenuItem command="⌘⇧N">Open Closed Tab</MenuItem>
+              <MenuItem command="⌘O">Open File...</MenuItem>
+            </MenuList>
+          </Menu>
           <Box>
             <Image
-              src="https://pixlr.com/images/index/remove-bg.webp"
+              src="Images/Sara.jpg"
               alt="Dan Abramov"
-              style={{ width: "200px", marginTop: "100px" }}
+              style={{ width: "300px", marginTop: "50px" }}
             />
           </Box>
 
