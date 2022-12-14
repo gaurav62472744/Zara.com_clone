@@ -7,12 +7,12 @@ import {
   Spacer,
   Text,
   useDisclosure,
+  Image,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import {
   Drawer,
   DrawerBody,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
@@ -20,28 +20,20 @@ import {
 } from "@chakra-ui/react";
 
 import { Link } from "react-router-dom";
-
+import { useState } from "react";
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const [placement, setPlacement] = useState("left");
   return (
-    <Flex
-      bgColor="transparent"
-      pos="fixed"
-      top={0}
-      w="100%"
-      zIndex={2}
-      className="scrolldetails"
-    >
+    <Flex bgColor="transparent" pos="fixed" top={0} w="100%" zIndex={2}>
       <Flex p="2" gap={[3, 6, 24]}>
-        {/* drawer  */}
         <Box style={{ cursor: "pointer" }} p={2}>
           <Button onClick={() => onOpen()} m={1} bg="transparent">
             <HamburgerIcon />
           </Button>
 
           <Drawer
-            // placement={placement}
+            placement={placement}
             onClose={onClose}
             isOpen={isOpen}
             size="sm"
@@ -52,7 +44,8 @@ const Navbar = () => {
               <DrawerCloseButton />
 
               <DrawerHeader ml={[0, 0, 12]}>
-                <Zara />
+                {/* <Zara /> */}
+                <Image src="Images/Sara.png" width="300px" alt="sara" />
               </DrawerHeader>
 
               <DrawerBody>
@@ -61,10 +54,14 @@ const Navbar = () => {
             </DrawerContent>
           </Drawer>
         </Box>
-
-        {/* icon  */}
         <Link to="/">
-          <Zara />
+          {/* <Zara /> */}
+          <Image
+            width="300px"
+            marginLeft={"-15px"}
+            src="Images/Sara.png"
+            alt="sara"
+          />
         </Link>
       </Flex>
       <Spacer />
@@ -84,7 +81,11 @@ const Navbar = () => {
           </Text>
         </Box>
         <Box>
-          <Text style={{ cursor: "pointer" }} fontSize="md" fontWeight={250}>
+          <Text
+            style={{ cursor: "pointer", color: "black" }}
+            fontSize="md"
+            fontWeight={"bold"}
+          >
             Help
           </Text>
         </Box>
