@@ -7,7 +7,7 @@ import {
   Tooltip,
 } from "@chakra-ui/react";
 
-function ProductAddToCart({ imgUrl, prod_name, price }) {
+function KidsProductAddToCart({ imgUrl, prod_name, price }) {
   return (
     <Flex
       p={50}
@@ -75,4 +75,4 @@ function ProductAddToCart({ imgUrl, prod_name, price }) {
   );
 }
 
-export default ProductAddToCart;
+export default KidsProductAddToCart;
