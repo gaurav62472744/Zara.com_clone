@@ -1,4 +1,3 @@
-import Zara from "../pages/Zara";
 import Dbody from "../pages/Dbody";
 import {
   Box,

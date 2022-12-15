@@ -1,7 +1,16 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Text,
+  Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
+} from "@chakra-ui/react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Dbody.css";
+// import "./Dbody.css";
 let Men = [
   "NEW",
   "ZARA ATHLETICZ",
@@ -58,56 +67,85 @@ let Child = [
   "ACCESSORIES",
   "JOIN LIFE",
 ];
-let men = "men";
-let women = "women";
-let child = "child";
+
+let Beauty = ["FACE", "LIPS", "EYES", "NAIL POLISH", "BRUSHES", "REFILLS"];
+
+let Origins = ["MOVIE", "LOOKBOOK", "COLLECTION", "CAMPAIGN", "STORE LOCATOR"];
 
 function Dbody() {
   const [nam, setName] = useState(Women);
-  const [link, setLink] = useState("women");
+  const [mens, setMens] = useState(Men);
+  const [kids, setKids] = useState(Child);
+  const [beauty, setBeauty] = useState(Beauty);
+  const [origins, setOrigins] = useState(Origins);
 
   return (
     <Box className="scrolldetails">
       <Flex gap={6}>
-        <Box
-          style={{ cursor: "pointer" }}
-          onClick={() => {
-            setName(Women);
-            setLink(women);
-          }}
-        >
-          Women
-        </Box>
-        <Box
-          style={{ cursor: "pointer" }}
-          onClick={() => {
-            setName(Men);
-            setLink(men);
-          }}
-        >
-          Men
-        </Box>
+        <Tabs>
+          <TabList>
+            <Tab fontSize={"xs"}>WOMEN</Tab>
+            <Tab fontSize={"xs"}>MEN</Tab>
+            <Tab fontSize={"xs"}>KIDS</Tab>
+            <Tab fontSize={"xs"}>BEAUTY</Tab>
+            <Tab fontSize={"xs"}>ZARA ORIGINS</Tab>
+          </TabList>
 
-        <Box
-          style={{ cursor: "pointer" }}
-          onClick={() => {
-            setName(Child);
-            setLink(child);
-          }}
-        >
-          Child
-        </Box>
+          <TabPanels>
+            <TabPanel>
+              {nam &&
+                nam.map((el, ind) => {
+                  return (
+                    <Text key={ind} fontSize="xs" fontWeight={400}>
+                      <Link to={`/women`}>{el}</Link>
+                    </Text>
+                  );
+                })}
+            </TabPanel>
+            <TabPanel>
+              {mens &&
+                mens.map((el, ind) => {
+                  return (
+                    <Text key={ind} fontSize="xs" fontWeight={400}>
+                      <Link to={`/mens`}>{el}</Link>
+                    </Text>
+                  );
+                })}
+            </TabPanel>
+            <TabPanel>
+              {kids &&
+                kids.map((el, ind) => {
+                  return (
+                    <Text key={ind} fontSize="xs" fontWeight={400}>
+                      <Link to={`/kids`}>{el}</Link>
+                    </Text>
+                  );
+                })}
+            </TabPanel>
+            <TabPanel>
+              {beauty &&
+                beauty.map((el, ind) => {
+                  return (
+                    <Text key={ind} fontSize="xs" fontWeight={400}>
+                      <Link to={`/beauty`}>{el}</Link>
+                    </Text>
+                  );
+                })}
+            </TabPanel>
+            <TabPanel>
+              {origins &&
+                origins.map((el, ind) => {
+                  return (
+                    <Text key={ind} fontSize="xs" fontWeight={400}>
+                      <Link to={`/origins`}>{el}</Link>
+                    </Text>
+                  );
+                })}
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
       </Flex>
-      <Box mt={20}>
-        {nam &&
-          nam.map((el, ind) => {
-            return (
-              <Text key={ind} fontSize="xs" fontWeight={400}>
-                <Link to={`/${link}`}>{el}</Link>
-              </Text>
-            );
-          })}
-      </Box>
+
       <Box ml={-6} mr={-6} mt={8}>
         <Text
           fontSize="xs"
