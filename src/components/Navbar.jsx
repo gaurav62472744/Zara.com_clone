@@ -1,4 +1,4 @@
-import Dbody from "../pages/Dbody";
+import Sidebar from "../pages/Sidebar";
 import {
   Box,
   Button,
@@ -7,6 +7,7 @@ import {
   Text,
   useDisclosure,
   Image,
+  Divider,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import {
@@ -43,18 +44,16 @@ const Navbar = () => {
               <DrawerCloseButton />
 
               <DrawerHeader ml={[0, 0, 12]}>
-                {/* <Zara /> */}
                 <Image src="Images/Sara.png" width="300px" alt="sara" />
               </DrawerHeader>
 
               <DrawerBody>
-                <Dbody />
+                <Sidebar />
               </DrawerBody>
             </DrawerContent>
           </Drawer>
         </Box>
         <Link to="/">
-          {/* <Zara /> */}
           <Image
             width="300px"
             marginLeft={"-15px"}
@@ -65,25 +64,38 @@ const Navbar = () => {
       </Flex>
       <Spacer />
       <Flex p="4" gap={4}>
-        <Link to="search">
+        <Link to="/search">
           <Box borderBottom="1px" borderColor="black" mb="42px" pr={5}>
-            <Text style={{ cursor: "pointer" }} fontSize="lg" fontWeight={500}>
-              Search
+            <Text
+              style={{ cursor: "pointer" }}
+              fontSize="sm"
+              fontFamily={"Neue-Helvetica, Helvetica, Arial, sans-serif"}
+              fontWeight={500}
+              marginRight={"100px"}
+            >
+              SEARCH
+            </Text>
+          </Box>
+        </Link>
+
+        <Link to="login">
+          <Box>
+            <Text
+              style={{ cursor: "pointer" }}
+              fontSize="md"
+              fontFamily={"Neue-Helvetica, Helvetica, Arial, sans-serif"}
+              fontWeight={300}
+            >
+              Login
             </Text>
           </Box>
         </Link>
         <Box>
-          <Text style={{ cursor: "pointer" }} fontSize="md" fontWeight={250}>
-            <Link to="/login">
-              {/* {loggedin.length === 0 ? "Log In" : loggedin[0].name} */}
-            </Link>
-          </Text>
-        </Box>
-        <Box>
           <Text
             style={{ cursor: "pointer", color: "black" }}
             fontSize="md"
-            fontWeight={"bold"}
+            fontWeight={300}
+            fontFamily={"Neue-Helvetica, Helvetica, Arial, sans-serif"}
           >
             Help
           </Text>

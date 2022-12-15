@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import "./Dbody.css";
+
 let Men = [
   "NEW",
   "ZARA ATHLETICZ",
@@ -72,7 +72,7 @@ let Beauty = ["FACE", "LIPS", "EYES", "NAIL POLISH", "BRUSHES", "REFILLS"];
 
 let Origins = ["MOVIE", "LOOKBOOK", "COLLECTION", "CAMPAIGN", "STORE LOCATOR"];
 
-function Dbody() {
+function Sidebar() {
   const [nam, setName] = useState(Women);
   const [mens, setMens] = useState(Men);
   const [kids, setKids] = useState(Child);
@@ -166,4 +166,4 @@ function Dbody() {
   );
 }
 
-export default Dbody;
+export default Sidebar;

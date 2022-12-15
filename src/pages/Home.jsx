@@ -5,26 +5,26 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 let Women = {
   image1:
-    "https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-knitwear/subhome-xmedia-49//w/1920/IMAGE-landscape-fill-4b91c18a-fd1a-4d7e-8ddb-39cafb54cdef-default_0.jpg?ts=1670433076541",
+    "https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-new/subhome-xmedia-50//w/1920/IMAGE-landscape-default-fill-6202be10-89aa-47bf-8d67-bca271b72adb-default_0.jpg?ts=1671035826261",
   video: "Video/Winter.mp4",
   image2:
-    "https://static.zara.net/photos///contents/mkt/spots/aw22-north-collection/subhome-xmedia-49//w/1920/IMAGE-landscape-default-fill-cdf1d01f-6f9e-46e7-a035-8079f5d17f72-default_0.jpg?ts=1670432527336",
+    "https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-shoes-bags/subhome-xmedia-50//w/1920/IMAGE-landscape-fill-06dbccc1-3867-4549-8701-fce9fb8d41c2-default_0.jpg?ts=1671034925317",
   image3:
-    "https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-new/subhome-xmedia-49-2//w/1920/IMAGE-landscape-default-fill-9470e5e9-1ec3-45c6-9045-53a692b8b504-default_0.jpg?ts=1670431933456",
+    "https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-coats/subhome-xmedia-50-2//w/1920/IMAGE-landscape-default-fill-02fbf935-677e-40ab-8fa1-1c60f122b18e-default_0.jpg?ts=1671037079704",
   image4:
-    "https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-best-sellers/subhome-xmedia-38//w/1920/IMAGE-landscape-fill-c68605f6-1f94-4830-8f4a-0f3bf22017e2-default_0.jpg?ts=1663579002306",
+    "https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-beauty/subhome-xmedia-50-in//w/1920/IMAGE-landscape-default-fill-3bd9bfee-44d9-4c4f-954f-597bd16be7fb-default_0.jpg?ts=1671008986521",
 };
 
 let Men = {
   image1:
-    "https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-athleticz/subhome-xmedia-50//w/1920/IMAGE-landscape-fill-8461d8f6-aa20-4b7c-bf56-ddbfe1ab66ea-default_0.jpg?ts=1670844315727",
+    "https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-edition/subhome-xmedia-w47//w/1920/IMAGE-landscape-fill-88c5ba6c-832e-442e-878f-48b60c0c8aa7-default_0.jpg?ts=1669457412950",
   video2: "Video/Winter.mp4",
   image2:
     "https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-new/subhome-xmedia-49//w/1920/IMAGE-landscape-fill-26580743-41eb-4586-859d-09e81a25b1be-default_0.jpg?ts=1670421023459",
   image3:
     "https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-edition/subhome-xmedia-w47//w/1920/IMAGE-landscape-fill-88c5ba6c-832e-442e-878f-48b60c0c8aa7-default_0.jpg?ts=1669457412950",
   image4:
-    "https://static.zara.net/photos///contents/mkt/spots/aw22-man-north-shoesandbags/subhome-xmedia-48//w/1920/IMAGE-landscape-fill-b24b0454-105d-41bd-80f4-604d93d15bb3-default_0.jpg?ts=1669655003956",
+    "https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-origins/subhome-xmedia-prewarming-drop-iii-winter-launch//w/1920/IMAGE-landscape-default-fill-0d199040-e6b5-4035-b655-c77c8d851b1f-default_0.jpg?ts=1668654637059",
 };
 
 let Child = {
@@ -86,11 +86,6 @@ const Home = () => {
           <source src={arr[ind].video} type="video/mp4" />
         </video>
       </Box>
-      {/* <Box height="400px">
-        <video width="100%" height="100%" autoPlay="autoPlay" loop={true} muted>
-          <source src={arr[ind].video2} type="video/mp4" />
-        </video>
-      </Box> */}
       <Box mt="-10%">
         <img src={arr[ind].image2} alt="" width="100%" height="100%" />
       </Box>
