@@ -97,7 +97,7 @@ function Sidebar() {
                 nam.map((el, ind) => {
                   return (
                     <Text key={ind} fontSize="xs" fontWeight={400}>
-                      <Link to={`/women`}>{el}</Link>
+                      <Link to="/women">{el}</Link>
                     </Text>
                   );
                 })}
