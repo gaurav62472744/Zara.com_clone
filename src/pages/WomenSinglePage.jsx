@@ -47,16 +47,22 @@ const WomenSinglePage = () => {
       <div
         style={{
           width: "18%",
-          border: "3px solid blue",
+          border: "4px solid black",
           padding: "1rem",
           borderRadius: "10px",
+          fontFamily: "Neue-Helvetica, Helvetica, Arial, sans-serif",
         }}
       >
         <p>PRODUCT : {data.prod_name}</p>
         <p style={{ marginTop: "20px" }}>PRICE : $ {data.price}</p>
         <p style={{ marginTop: "20px" }}>DESCRIPTION : {data.material}</p>
         <p style={{ marginTop: "20px" }}>SIZE : {data.size}</p>
-        <Button mt={"20px"} bg={"black"} color={"white"} _hover={"none"}>
+        <Button
+          mt={"20px"}
+          bg={"black"}
+          color={"white"}
+          _hover={{ bg: "grey", color: "white" }}
+        >
           Add To Cart
         </Button>
       </div>
