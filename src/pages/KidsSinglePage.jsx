@@ -4,12 +4,12 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-const WomenSinglePage = () => {
+const KidsSinglePage = () => {
   const { id } = useParams();
 
   const [data, setData] = useState([]);
   const getData = async () => {
-    let res = await fetch(`https://saraweb.onrender.com/women/${id}`);
+    let res = await fetch(`https://saraweb.onrender.com/kids/${id}`);
     res = await res.json();
     setData(res);
   };
@@ -64,4 +64,4 @@ const WomenSinglePage = () => {
   );
 };
 
-export default WomenSinglePage;
+export default KidsSinglePage;

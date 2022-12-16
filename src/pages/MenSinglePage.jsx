@@ -4,12 +4,12 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-const WomenSinglePage = () => {
+const MenSinglePage = () => {
   const { id } = useParams();
 
   const [data, setData] = useState([]);
   const getData = async () => {
-    let res = await fetch(`https://saraweb.onrender.com/women/${id}`);
+    let res = await fetch(`https://saraweb.onrender.com/men/${id}`);
     res = await res.json();
     setData(res);
   };
@@ -56,6 +56,7 @@ const WomenSinglePage = () => {
         <p style={{ marginTop: "20px" }}>PRICE : $ {data.price}</p>
         <p style={{ marginTop: "20px" }}>DESCRIPTION : {data.material}</p>
         <p style={{ marginTop: "20px" }}>SIZE : {data.size}</p>
+        <p style={{ marginTop: "20px" }}>CATEGORY : {data.type1}</p>
         <Button mt={"20px"} bg={"black"} color={"white"} _hover={"none"}>
           Add To Cart
         </Button>
@@ -64,4 +65,4 @@ const WomenSinglePage = () => {
   );
 };
 
-export default WomenSinglePage;
+export default MenSinglePage;

@@ -7,7 +7,7 @@ import {
   Tooltip,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-function ProductAddToCart({ _id, imgUrl, prod_name, price }) {
+function ProductAddToCart({ id, imgUrl, prod_name, price }) {
   return (
     <Flex
       p={50}
@@ -17,7 +17,7 @@ function ProductAddToCart({ _id, imgUrl, prod_name, price }) {
       justifyContent="center"
       ml={"5px"}
     >
-      <Link to={`/womenproduct/${_id}`}>
+      <Link to={`/womenproduct/${id}`}>
         <Box
           bg={useColorModeValue("white", "gray.800")}
           maxW="sm"
