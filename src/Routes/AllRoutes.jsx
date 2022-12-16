@@ -11,6 +11,8 @@ import MensProductAddToCart from "../pages/MenCards";
 import KidsProductAddToCart from "../pages/KidsCard";
 import PageNotFound from "../pages/PageNotFound";
 import WomenSinglePage from "../pages/WomenSinglePage";
+import MenSinglePage from "../pages/MenSinglePage";
+import KidsSinglePage from "../pages/KidsSinglePage";
 import Search from "../pages/Search";
 
 const AllRoutes = () => {
@@ -27,6 +29,8 @@ const AllRoutes = () => {
         <Route path="/mencards" element={<MensProductAddToCart />}></Route>
         <Route path="/kidcards" element={<KidsProductAddToCart />}></Route>
         <Route path="/womenproduct/:id" element={<WomenSinglePage />}></Route>
+        <Route path="/menproduct/:id" element={<MenSinglePage />}></Route>
+        <Route path="/kidsproduct/:id" element={<KidsSinglePage />}></Route>
         <Route path="/search" element={<Search />}></Route>
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
