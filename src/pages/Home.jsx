@@ -22,7 +22,7 @@ let Men = {
   image2:
     "https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-new/subhome-xmedia-49//w/1920/IMAGE-landscape-fill-26580743-41eb-4586-859d-09e81a25b1be-default_0.jpg?ts=1670421023459",
   image3:
-    "https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-edition/subhome-xmedia-w47//w/1920/IMAGE-landscape-fill-88c5ba6c-832e-442e-878f-48b60c0c8aa7-default_0.jpg?ts=1669457412950",
+    "https://static.zara.net/photos///2022/I/M/2/p/0000/004/955/2/w/948/0000004955_15_2_1.jpg?ts=1669139167383",
   image4:
     "https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-origins/subhome-xmedia-prewarming-drop-iii-winter-launch//w/1920/IMAGE-landscape-default-fill-0d199040-e6b5-4035-b655-c77c8d851b1f-default_0.jpg?ts=1668654637059",
 };
