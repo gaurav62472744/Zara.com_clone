@@ -7,6 +7,7 @@ import Loading from "./Loading";
 const Women = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+
   const getData = async () => {
     setLoading(true);
     try {
