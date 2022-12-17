@@ -1,177 +1,114 @@
-import { Box, Button, Flex, Input, Text, useToast } from "@chakra-ui/react";
-// import axios from "axios";
-// import React, { useContext, useEffect, useState } from "react";
+import { Box, Button, Flex, Input, Text, FormControl } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-// import { AuthContext } from "../Context/AuthContext";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-// import {signInWithGoogle} from '../services/firebase'
 
 function Login() {
-  //  const toast = useToast();
-  // const { loggedin,setLoggedin } = useContext(AuthContext);
-
-  // const [data, setData] = useState([]);
-
-  // useEffect(() => {
-  //   axios
-  //     .get(" https://zaraclone-json-data.herokuapp.com/userData")
-  //     .then((res) => setData(res.data));
-  // }, []);
-
-  // console.log(data);
-
-  // const [login, setlogin] = useState({ email: "", password: "" });
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setlogin({ ...login, [name]: value });
-  // };
-  // const handleSubmit = () => {
-  //   let ndata = data.filter(
-  //     (el) => el.email == login.email && el.password == login.password
-  //   );
-  //   setLoggedin(ndata);
-  //   setlogin({email:"", password:""})
-  // };
-
-  // useEffect(() => {
-  //   loggedin.length === 0
-  //     ? toast({
-  //         position: "top",
-  //         title: "Please Log In",
-  //         status: "error",
-  //         isClosable: true,
-  //       })
-  //     : toast({
-  //         position: "top",
-  //         title: "Account created.",
-  //         description: "Logged in Successfully",
-  //         status: "success",
-  //         duration: 9000,
-  //         isClosable: true,
-  //       });
-  // }, [loggedin]);
-
   return (
     <Box>
       <Box>
         <Navbar />
       </Box>
 
-      <Box mt={200} ml="16%">
-        <Flex gap={20}>
-          {/* <form> */}
-          <Box>
-            <Text fontSize="md" fontWeight="600">
+      <Box
+        mt={250}
+        ml="12%"
+        style={{ fontFamily: "Neue-Helvetica, Helvetica, Arial, sans-serif" }}
+      >
+        <Flex gap={200}>
+          <Box width={"20%"} textAlign={"start"}>
+            <Text fontSize="18px" fontWeight={600}>
               LOG IN
             </Text>
             <Box>
-              <Text fontSize="xs" fontWeight="600" mt="10%">
-                E-MAIL
-              </Text>
-              <Input
-                border="none"
-                borderRadius="none"
-                borderColor="black"
-                borderBottom="1px"
-                // onChange={handleChange}
-                // value={login.email}
-                name="email"
-                type="text"
-                placeholder="enter email...."
-              />
+              <FormControl isRequired>
+                <Input
+                  border="none"
+                  borderRadius="none"
+                  borderColor="black"
+                  borderBottom="1px"
+                  textDecoration="none"
+                  name="email"
+                  type="text"
+                  placeholder="E-MAIL"
+                  mt={"25px"}
+                  alignItems="start"
+                  padding="0px"
+                  fontSize="12px"
+                />
+              </FormControl>
             </Box>
             <Box>
-              <Text fontSize="xs" fontWeight="600" mt="10%">
-                PASSWORD
-              </Text>
-              <Input
-                border="none"
-                borderRadius="none"
-                borderColor="black"
-                borderBottom="1px"
-                // onChange={handleChange}
-                // value={login.password}
-                name="password"
-                type="password"
-                placeholder="enter password...."
-              />
-              <Text fontSize="xs" fontWeight="600" mt="10%">
+              <FormControl isRequired>
+                <Input
+                  fontSize="12px"
+                  border="none"
+                  borderRadius="none"
+                  borderColor="black"
+                  borderBottom="1px"
+                  textDecoration="none"
+                  name="password"
+                  type="text"
+                  placeholder="PASSWORD"
+                  mt={"25px"}
+                  alignItems="start"
+                  padding="0px"
+                />
+              </FormControl>
+              <Text fontSize="10px" fontWeight="600" mt="10%">
                 HAVE YOU FORGOTTEN YOUR PASSWORD?
               </Text>
             </Box>
             <Box mt="15%">
               <Button
                 type="submit"
-                bgColor="black"
-                color="white"
-                // onClick={() => {
-                //   handleSubmit();
-                // }}
+                w={"100%"}
+                borderRadius="none"
+                bg={"black"}
+                color={"white"}
+                _hover={{ bg: "grey", color: "white" }}
               >
                 LOG IN
               </Button>
             </Box>
           </Box>
-          {/* </form> */}
-          {/* {loggedin.length === 0 ? ( */}({" "}
           <Box>
-            <Text fontSize="md" fontWeight="600">
+            <Text fontSize="18px" fontWeight="600" textAlign={"start"}>
               REGISTER
             </Text>
 
             <Box>
-              <Text fontSize="xs" fontWeight="600" mt="10%">
-                IF YOU STILL DON'T HAVE A ZARA.COM ACCOUNT, USE <br />
-                THIS OPTION TO ACCESS THE REGISTRATION FORM.
+              <Text fontSize="12px" mt="7%" textAlign={"start"}>
+                IF YOU STILL DON'T HAVE A <b> ZARA.COM </b> ACCOUNT, USE THIS
+                OPTION TO <br /> ACCESS THE REGISTRATION FORM.
               </Text>
             </Box>
 
             <Box>
-              <Text fontSize="xs" fontWeight="600" mt="10%">
+              <Text fontSize="12px" mt="7%" textAlign={"start"}>
                 BY GIVING US YOUR DETAILS, PURCHASING IN
-                <br /> ZARA.COM WILL BE FASTER AND AN ENJOYABLE
-                <br /> EXPERIENCE.
+                <b> ZARA.COM </b> WILL BE FASTER <br />
+                AND AN ENJOYABLE EXPERIENCE.
               </Text>
             </Box>
 
-            <Box>
-              <Link to="/signin">
-                <Button mt="30%" bgColor="black" color="white">
-                  Create Account
+            <Box display={"flex"} flexDirection={"column"} alignItems={"start"}>
+              <Link to="/signup">
+                <Button
+                  mt="26%"
+                  w={"300px"}
+                  borderRadius="none"
+                  bg={"black"}
+                  color={"white"}
+                  _hover={{ bg: "grey", color: "white" }}
+                >
+                  CREATE ACCOUNT
                 </Button>
               </Link>
             </Box>
           </Box>
-          ): (
-          <Box>
-            <Text>NOT YOU?</Text>
-            <Text>
-              PLEASE,
-              {/* <Link to="/signin"> */}
-              <strong
-              // onClick={()=>setLoggedin([])}
-              //   style={{
-              //     borderBottom: "1px solid black",
-              //     cursor: "pointer",
-              //   }}
-              >
-                SIGN OUT
-              </strong>
-              {/* </Link> */}
-              TO BEGIN BROWSING AS
-            </Text>
-            <Text>AN ANONYMOUS USER.</Text>
-          </Box>
-          ){/* */}
         </Flex>
       </Box>
-      {/* <Button
-                type="submit"
-                bgColor="black"
-                color="white"
-                onClick={signInWithGoogle}
-                >Sign in</Button> */}
 
       <Footer />
     </Box>
