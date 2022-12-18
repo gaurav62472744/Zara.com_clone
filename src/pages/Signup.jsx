@@ -8,13 +8,13 @@ import {
   Center,
   useToast,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
 import Footer from "../components/Footer";
+import { FcGoogle } from "react-icons/fc";
+
 import React, { useState } from "react";
 import {
   getAuth,
-  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
@@ -23,17 +23,18 @@ import { app } from "../firebase";
 const auth = getAuth(app);
 const Google = new GoogleAuthProvider();
 
-function Login() {
+const Signuppage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [number, setNumber] = useState("");
+  const [name, setName] = useState("");
   const toast = useToast();
 
-  const singinUser = () => {
-    signInWithEmailAndPassword(auth, email, password)
+  const createUser = () => {
+    createUserWithEmailAndPassword(auth, email, password, name, number)
       .then((value) => {
         toast({
-          title: "SignIn Successfull.",
+          title: "Account created.",
           description: `Welcome, ${email} `,
           status: "success",
           duration: 5000,
@@ -41,6 +42,8 @@ function Login() {
           isClosable: true,
         });
         setEmail("");
+        setName("");
+        setNumber("");
         setPassword("");
         console.log(value);
       })
@@ -53,6 +56,8 @@ function Login() {
           duration: 3000,
         });
         setEmail("");
+        setName("");
+        setNumber("");
         setPassword("");
       });
   };
@@ -69,6 +74,8 @@ function Login() {
           isClosable: true,
         });
         setEmail("");
+        setName("");
+        setNumber("");
         setPassword("");
         console.log(value);
       })
@@ -81,20 +88,23 @@ function Login() {
           duration: 3000,
         });
         setEmail("");
+        setName("");
+        setNumber("");
         setPassword("");
       });
   };
+
   return (
     <Box>
       <Box
-        mt={250}
-        ml="12%"
+        mt={170}
+        ml="40%"
         style={{ fontFamily: "Neue-Helvetica, Helvetica, Arial, sans-serif" }}
       >
         <Flex gap={200}>
-          <Box width={"20%"} textAlign={"start"}>
+          <Box width={"35%"} textAlign={"start"}>
             <Text fontSize="18px" fontWeight={600}>
-              LOG IN
+              SIGN UP
             </Text>
             <Box>
               <FormControl isRequired>
@@ -119,6 +129,46 @@ function Login() {
             <Box>
               <FormControl isRequired>
                 <Input
+                  border="none"
+                  borderRadius="none"
+                  borderColor="black"
+                  borderBottom="1px"
+                  textDecoration="none"
+                  name="name"
+                  type="text"
+                  placeholder="NAME"
+                  mt={"25px"}
+                  alignItems="start"
+                  padding="0px"
+                  fontSize="12px"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </FormControl>
+            </Box>
+            <Box>
+              <FormControl isRequired>
+                <Input
+                  border="none"
+                  borderRadius="none"
+                  borderColor="black"
+                  borderBottom="1px"
+                  textDecoration="none"
+                  name="number"
+                  type="number"
+                  placeholder="MOBILE NUMBER"
+                  mt={"25px"}
+                  alignItems="start"
+                  padding="0px"
+                  fontSize="12px"
+                  value={number}
+                  onChange={(e) => setNumber(e.target.value)}
+                />
+              </FormControl>
+            </Box>
+            <Box>
+              <FormControl isRequired>
+                <Input
                   fontSize="12px"
                   border="none"
                   borderRadius="none"
@@ -135,9 +185,6 @@ function Login() {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </FormControl>
-              <Text fontSize="10px" fontWeight="600" mt="10%">
-                HAVE YOU FORGOTTEN YOUR PASSWORD?
-              </Text>
             </Box>
             <Box mt="15%">
               <Button
@@ -147,9 +194,9 @@ function Login() {
                 bg={"black"}
                 color={"white"}
                 _hover={{ bg: "grey", color: "white" }}
-                onClick={singinUser}
+                onClick={createUser}
               >
-                LOG IN
+                SIGN UP
               </Button>
             </Box>
             <Box mt="15%">
@@ -164,52 +211,16 @@ function Login() {
                 leftIcon={<FcGoogle />}
               >
                 <Center>
-                  <Text>Sign in with Google</Text>
+                  <Text>Sign Up with Google</Text>
                 </Center>
               </Button>
             </Box>
           </Box>
-          <Box>
-            <Text fontSize="18px" fontWeight="600" textAlign={"start"}>
-              REGISTER
-            </Text>
-
-            <Box>
-              <Text fontSize="12px" mt="7%" textAlign={"start"}>
-                IF YOU STILL DON'T HAVE A <b> ZARA.COM </b> ACCOUNT, USE THIS
-                OPTION TO <br /> ACCESS THE REGISTRATION FORM.
-              </Text>
-            </Box>
-
-            <Box>
-              <Text fontSize="12px" mt="7%" textAlign={"start"}>
-                BY GIVING US YOUR DETAILS, PURCHASING IN
-                <b> ZARA.COM </b> WILL BE FASTER <br />
-                AND AN ENJOYABLE EXPERIENCE.
-              </Text>
-            </Box>
-
-            <Box display={"flex"} flexDirection={"column"} alignItems={"start"}>
-              <Link to="/signup">
-                <Button
-                  mt="26%"
-                  w={"300px"}
-                  borderRadius="none"
-                  bg={"black"}
-                  color={"white"}
-                  _hover={{ bg: "grey", color: "white" }}
-                >
-                  CREATE ACCOUNT
-                </Button>
-              </Link>
-            </Box>
-          </Box>
         </Flex>
       </Box>
-
       <Footer />
     </Box>
   );
-}
+};
 
-export default Login;
+export default Signuppage;
