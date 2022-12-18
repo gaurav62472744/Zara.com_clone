@@ -118,9 +118,13 @@ const Navbar = () => {
                 clipRule="evenodd"
                 d="M22.8 23.4v-9h-5.4v9l2.695-2.827L22.8 23.4zm-4.6-1.998l1.894-1.987L22 21.407V15.2h-3.8v6.202z"
               ></path>
-              <text x="8" y="19" fontSize="xs" fontWeight={100} fill="black">
-                {/* {state.cart.length} */}
-              </text>
+              <text
+                x="8"
+                y="19"
+                fontSize="xs"
+                fontWeight={100}
+                fill="black"
+              ></text>
             </svg>
           </Box>
         </Link>
