@@ -8,7 +8,7 @@ import {
   Center,
   useToast,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import Footer from "../components/Footer";
 import React, { useState } from "react";
@@ -18,12 +18,17 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
+
 import { app } from "../firebase";
+import { useContext } from "react";
+import { AllContext } from "../AuthContext/AuthContext";
 
 const auth = getAuth(app);
 const Google = new GoogleAuthProvider();
 
 function Login() {
+  const { isAuth, setIsAuth } = useContext(AllContext);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -34,7 +39,7 @@ function Login() {
       .then((value) => {
         toast({
           title: "SignIn Successfull.",
-          description: `Welcome, ${email} `,
+          description: `Welcome, ${email}`,
           status: "success",
           duration: 5000,
           position: "top",
@@ -42,6 +47,7 @@ function Login() {
         });
         setEmail("");
         setPassword("");
+        setIsAuth(true);
         console.log(value);
       })
       .catch((err) => {
@@ -62,7 +68,7 @@ function Login() {
       .then((value) => {
         toast({
           title: "Account created.",
-          description: `Welcome, ${email} `,
+          description: `Welcome to Sara.com`,
           status: "success",
           duration: 5000,
           position: "top",
@@ -70,6 +76,7 @@ function Login() {
         });
         setEmail("");
         setPassword("");
+        setIsAuth(true);
         console.log(value);
       })
       .catch((err) => {
@@ -84,6 +91,10 @@ function Login() {
         setPassword("");
       });
   };
+  if (isAuth) {
+    return <Navigate to="/" />;
+  }
+
   return (
     <Box>
       <Box

@@ -7,7 +7,7 @@ import {
   Text,
   useDisclosure,
   Image,
-  Divider,
+  useToast,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import {
@@ -18,12 +18,44 @@ import {
   DrawerContent,
   DrawerCloseButton,
 } from "@chakra-ui/react";
-
+import { useContext } from "react";
+import { AllContext } from "../AuthContext/AuthContext";
+import { getAuth, signOut } from "firebase/auth";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { app } from "../firebase";
+
+const auth = getAuth(app);
 const Navbar = () => {
+  const { isAuth, setIsAuth, setNewUser } = useContext(AllContext);
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [placement, setPlacement] = useState("left");
+  const toast = useToast();
+  const logout = () => {
+    signOut(auth)
+      .then((value) => {
+        toast({
+          title: "Logout",
+          description: `Logout Successful `,
+          status: "success",
+          duration: 5000,
+          position: "top",
+          isClosable: true,
+        });
+        setNewUser(false);
+        console.log(value);
+      })
+      .catch((err) => {
+        toast({
+          title: `${err.message}`,
+          status: "error",
+          isClosable: true,
+          position: "top",
+          duration: 3000,
+        });
+      });
+  };
   return (
     <Flex bgColor="transparent" pos="fixed" top={0} w="100%" zIndex={2}>
       <Flex p="2" gap={[3, 6, 24]}>
@@ -78,18 +110,27 @@ const Navbar = () => {
           </Box>
         </Link>
 
-        <Link to="login">
-          <Box>
-            <Text
-              style={{ cursor: "pointer" }}
-              fontSize="md"
-              fontFamily={"Neue-Helvetica, Helvetica, Arial, sans-serif"}
-              fontWeight={300}
-            >
-              Login
-            </Text>
-          </Box>
-        </Link>
+        <Box display={isAuth ? "none" : "block"}>
+          <Text
+            style={{ cursor: "pointer" }}
+            fontSize="md"
+            fontFamily={"Neue-Helvetica, Helvetica, Arial, sans-serif"}
+            fontWeight={300}
+          >
+            <Link to="/login">Login</Link>
+          </Text>
+        </Box>
+        <Box display={isAuth ? "block" : "none"}>
+          <Text
+            style={{ cursor: "pointer" }}
+            fontSize="md"
+            fontFamily={"Neue-Helvetica, Helvetica, Arial, sans-serif"}
+            fontWeight={300}
+            onClick={logout}
+          >
+            Logout
+          </Text>
+        </Box>
         <Box>
           <Text
             style={{ cursor: "pointer", color: "black" }}
