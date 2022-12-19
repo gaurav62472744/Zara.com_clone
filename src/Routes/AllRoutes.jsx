@@ -16,6 +16,7 @@ import KidsSinglePage from "../pages/KidsSinglePage";
 import Search from "../pages/Search";
 import Signuppage from "../pages/Signup";
 import AllContextProvider from "../AuthContext/AuthContext";
+import BackdropExample from "../pages/Payment";
 
 const AllRoutes = () => {
   return (
@@ -36,6 +37,7 @@ const AllRoutes = () => {
         <Route path="/kidsproduct/:id" element={<KidsSinglePage />}></Route>
         <Route path="/authcontext" element={<AllContextProvider />}></Route>
         <Route path="/search" element={<Search />}></Route>
+        <Route path="/payment" element={<BackdropExample />}></Route>
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
     </div>

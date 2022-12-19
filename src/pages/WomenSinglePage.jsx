@@ -7,12 +7,13 @@ import { useParams, Link } from "react-router-dom";
 const WomenSinglePage = () => {
   const { id } = useParams();
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
   const getData = async () => {
     let res = await fetch(`https://saraweb.onrender.com/women/${id}`);
     res = await res.json();
-    setData(res);
+    setData({ ...res, quantity: 1 });
   };
+  console.log(data);
 
   useEffect(() => {
     getData(id);
