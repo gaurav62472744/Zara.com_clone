@@ -1,7 +1,6 @@
 import { Box, Flex, Text, Image, Button } from "@chakra-ui/react";
 import { useState } from "react";
-
-import BackdropExample from "./Payment";
+import { Link } from "react-router-dom";
 
 function Cart() {
   let lData = JSON.parse(localStorage.getItem("Data"));
@@ -27,12 +26,16 @@ function Cart() {
           <Text fontSize="lg" fontWeight={300}>
             FAVOURITES
           </Text>
-
-          <BackdropExample
-            imgUrl={lData[0].imgUrl}
-            price={lData[0].price}
-            name={lData[0].prod_name}
-          />
+          <Button
+            ml={"500px"}
+            w={"200px"}
+            borderRadius="none"
+            bg={"black"}
+            color={"white"}
+            _hover={{ bg: "grey", color: "white" }}
+          >
+            <Link to="/checkout"> Proceed to checkout</Link>
+          </Button>
         </Flex>
 
         {lData.map((el, i) => (

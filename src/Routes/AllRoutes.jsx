@@ -17,6 +17,7 @@ import Search from "../pages/Search";
 import Signuppage from "../pages/Signup";
 import AllContextProvider from "../AuthContext/AuthContext";
 import BackdropExample from "../pages/Payment";
+import Checkout from "../pages/CheckoutPage";
 
 const AllRoutes = () => {
   return (
@@ -38,6 +39,7 @@ const AllRoutes = () => {
         <Route path="/authcontext" element={<AllContextProvider />}></Route>
         <Route path="/search" element={<Search />}></Route>
         <Route path="/payment" element={<BackdropExample />}></Route>
+        <Route path="/checkout" element={<Checkout />}></Route>
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
     </div>

@@ -13,6 +13,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import React from "react";
+import { Link } from "react-router-dom";
 
 function BackdropExample({ imgUrl, price, name }) {
   const toast = useToast();
@@ -40,7 +41,7 @@ function BackdropExample({ imgUrl, price, name }) {
           onOpen();
         }}
       >
-        Procced to Payment
+        Continue to Payment
       </Button>
       <Modal isCentered isOpen={isOpen} onClose={onClose}>
         {overlay}
@@ -52,11 +53,12 @@ function BackdropExample({ imgUrl, price, name }) {
             display={"flex"}
             justifyContent={"space-evenly"}
             alignItems={"center"}
+            flexDirection={"column"}
           >
-            <Image src={imgUrl} alt={name} width={"120px"}></Image>
+            <Image src={imgUrl} alt={name} width={"130px"}></Image>
 
-            <Text>{name}</Text>
-            <Text> {price}</Text>
+            <Text mt={"10px"}>ITEM : {name}</Text>
+            <Text> PRiCE : $ {price}</Text>
           </ModalBody>
           <ModalFooter>
             <Button
@@ -79,7 +81,7 @@ function BackdropExample({ imgUrl, price, name }) {
               _hover={{ bg: "grey", color: "white" }}
               onClick={() =>
                 toast({
-                  title: "Payment Status ",
+                  title: "Payment SuccessFull ",
                   description: "Hurray! we have recieved your payment",
                   status: "success",
                   duration: 3000,
@@ -88,7 +90,7 @@ function BackdropExample({ imgUrl, price, name }) {
                 })
               }
             >
-              Pay Amount : $ {price}
+              <Link to="/">Pay Amount : $ {price}</Link>
             </Button>
           </ModalFooter>
         </ModalContent>
