@@ -10,6 +10,8 @@ import {
 } from "@chakra-ui/react";
 import Footer from "../components/Footer";
 import { FcGoogle } from "react-icons/fc";
+import { useContext } from "react";
+import { AllContext } from "../AuthContext/AuthContext";
 
 import React, { useState } from "react";
 import {
@@ -19,11 +21,13 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { app } from "../firebase";
+import { Navigate } from "react-router-dom";
 
 const auth = getAuth(app);
 const Google = new GoogleAuthProvider();
 
 const Signuppage = () => {
+  const { isAuth, setIsAuth, newUser, setNewUser } = useContext(AllContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [number, setNumber] = useState("");
@@ -46,6 +50,7 @@ const Signuppage = () => {
         setNumber("");
         setPassword("");
         console.log(value);
+        setNewUser(true);
       })
       .catch((err) => {
         toast({
@@ -67,7 +72,7 @@ const Signuppage = () => {
       .then((value) => {
         toast({
           title: "Account created.",
-          description: `Welcome, ${email} `,
+          description: `Welcome to Sara.com`,
           status: "success",
           duration: 5000,
           position: "top",
@@ -78,6 +83,7 @@ const Signuppage = () => {
         setNumber("");
         setPassword("");
         console.log(value);
+        setIsAuth(true);
       })
       .catch((err) => {
         toast({
@@ -94,6 +100,13 @@ const Signuppage = () => {
       });
   };
 
+  if (isAuth) {
+    return <Navigate to="/" />;
+  }
+
+  if (newUser) {
+    return <Navigate to="/login" />;
+  }
   return (
     <Box>
       <Box

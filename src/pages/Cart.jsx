@@ -1,6 +1,8 @@
 import { Box, Flex, Text, Image, Button } from "@chakra-ui/react";
 import { useState } from "react";
 
+import BackdropExample from "./Payment";
+
 function Cart() {
   let lData = JSON.parse(localStorage.getItem("Data"));
 
@@ -12,6 +14,7 @@ function Cart() {
     localStorage.setItem("Data", JSON.stringify(newData));
   };
 
+  console.log(lData);
   const [incr, setIncr] = useState(1);
 
   return (
@@ -24,6 +27,12 @@ function Cart() {
           <Text fontSize="lg" fontWeight={300}>
             FAVOURITES
           </Text>
+
+          <BackdropExample
+            imgUrl={lData[0].imgUrl}
+            price={lData[0].price}
+            name={lData[0].prod_name}
+          />
         </Flex>
 
         {lData.map((el, i) => (
