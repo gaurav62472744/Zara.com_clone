@@ -9,6 +9,14 @@ HTML | CSS | JAVASCRIPT | CHAKRA UI | REACT-JS
 
 Deployed Link:- https://scarce-pocket-8679.vercel.app/
 
+
+### Home Page:-
+</hr>
+![Zara h1](https://user-images.githubusercontent.com/110033104/210264110-e3b077d6-300f-48bf-aba3-10f4ad0e9ffd.png)
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
