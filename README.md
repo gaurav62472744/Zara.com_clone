@@ -18,28 +18,23 @@ HTML | CSS | JAVASCRIPT | CHAKRA UI | REACT-JS
 
 
 - ## <span style="color:blue"> Login Page </span>
-<br />
-![Zara h2](https://user-images.githubusercontent.com/110033104/210265336-df79aec2-90bc-4b5a-910d-f787f841ba3e.png)
+<br />![Zara h2](https://user-images.githubusercontent.com/110033104/210265336-df79aec2-90bc-4b5a-910d-f787f841ba3e.png)
 
 
 - ## <span style="color:blue"> Product Page </span>
-<br />
-![Zara h3](https://user-images.githubusercontent.com/110033104/210264876-7942f975-884a-4ead-8184-a511a8e88e27.png)
+<br />![Zara h3](https://user-images.githubusercontent.com/110033104/210264876-7942f975-884a-4ead-8184-a511a8e88e27.png)
 
 
 - ## <span style="color:blue"> Single Product Page </span>
-<br />
-![Zara h4](https://user-images.githubusercontent.com/110033104/210264937-2f88693c-a7a2-4d76-8ce1-303abc9a7ef6.png)
+<br />![Zara h4](https://user-images.githubusercontent.com/110033104/210264937-2f88693c-a7a2-4d76-8ce1-303abc9a7ef6.png)
 
 
 - ## <span style="color:blue"> Cart Page </span>
-<br />
-![Zara h5](https://user-images.githubusercontent.com/110033104/210264996-4cf21a2b-3d32-4e92-8f67-70bb17693176.png)
+<br />![Zara h5](https://user-images.githubusercontent.com/110033104/210264996-4cf21a2b-3d32-4e92-8f67-70bb17693176.png)
 
 
 - ## <span style="color:blue"> Payment Page </span>
-<br />
-![Zara h6](https://user-images.githubusercontent.com/110033104/210265044-5cc88afe-37f0-4012-a3cb-d0ac7ddeea14.png)
+<br />![Zara h6](https://user-images.githubusercontent.com/110033104/210265044-5cc88afe-37f0-4012-a3cb-d0ac7ddeea14.png)
 
 
 - ## <span style="color:blue"> Payment Gateway </span>
