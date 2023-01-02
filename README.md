@@ -7,7 +7,7 @@ Zara is one of the largest international fashion companies. It belongs to Indite
 Tech-Stack:-
 HTML | CSS | JAVASCRIPT | CHAKRA UI | REACT-JS
 
-Deployed Link:- 
+Deployed Link:- https://scarce-pocket-8679.vercel.app/
 
 # Getting Started with Create React App
 
