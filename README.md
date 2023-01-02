@@ -1,3 +1,14 @@
+SARA.COM Clone of (ZARA.COM)
+
+About Website:-
+
+Zara is one of the largest international fashion companies. It belongs to Inditex, one of the world's largest distribution groups. The customer is at the heart of our unique business model, which includes design, production, distribution and sales through our extensive retail network.
+
+Tech-Stack:-
+HTML | CSS | JAVASCRIPT | CHAKRA UI | REACT-JS
+
+Deployed Link:- 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
