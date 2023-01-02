@@ -11,7 +11,7 @@ HTML | CSS | JAVASCRIPT | CHAKRA UI | REACT-JS
 
 ### Snapshots of Bewakoof project :- 
 
-- ## <span style="color:blue"> Home Page: Header & Carousel </span>
+- ## <span style="color:blue"> Home Page </span>
 <br />
 
 ![Zara h1](https://user-images.githubusercontent.com/110033104/210264706-b79c7957-1c06-49c0-b68f-73d78de039ab.png)
